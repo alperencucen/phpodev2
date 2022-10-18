@@ -1,0 +1,20 @@
+<?php
+
+$dizi = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "", "", NULL];
+function myFunction($array,$value)
+{
+    $filter = array_filter($array);
+    $random = array_rand($filter,$value);
+    $result = array_map(function($key) use ($filter) {
+        return $filter[$key];
+    }, $random);
+    return $result;
+}
+
+echo "<pre>";
+print_r(myFunction($dizi, 3));
+print_r(myFunction($dizi, 2));
+print_r(myFunction($dizi, 5));
+print_r(myFunction($dizi, 4));
+
+?> 
